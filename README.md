@@ -3,7 +3,7 @@
 Example moving house CRUD app with multiple views.
 
 
-## Global dependencies.
+## Global dependencies
 
 * [Node](http://nodejs.org/) v >= 0.10.25 and npm >= 1.3.1 (current stable as of 10th November 2014).
 * Chrome browser
@@ -12,3 +12,7 @@ Example moving house CRUD app with multiple views.
 ## To install and run
 
 * `npm run-script devbuild`
+
+## To test
+
+* `npm test`
