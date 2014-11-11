@@ -8,6 +8,7 @@
                     "unit": "kg",
                     "value": 40
                 },
+                "itemCount": 1,
                 "isFragile": false
             },
             {
@@ -16,6 +17,7 @@
                     "unit": "kg",
                     "value": 5
                 },
+                "itemCount": 1,
                 "isFragile": true
             },
             {
@@ -24,6 +26,7 @@
                     "unit": "kg",
                     "value": 0.5
                 },
+                "itemCount": 1,
                 "isFragile": false
             }
         ]
@@ -37,6 +40,7 @@
                     "unit": "kg",
                     "value": 2
                 },
+                "itemCount": 1,
                 "isFragile": false
             },
             {
@@ -45,6 +49,7 @@
                     "unit": "kg",
                     "value": 1
                 },
+                "itemCount": 1,
                 "isFragile": false
             }
         ]
@@ -76,6 +81,7 @@
                     "unit": "kg",
                     "value": 50
                 },
+                "itemCount": 1,
                 "isFragile": false
             }
         ]
@@ -89,6 +95,7 @@
                     "unit": "kg",
                     "value": 60
                 },
+                "itemCount": 1,
                 "isFragile": false
             },
             {
@@ -97,6 +104,7 @@
                     "unit": "kg",
                     "value": 0.5
                 },
+                "itemCount": 1,
                 "isFragile": false
             }
         ]
@@ -110,6 +118,7 @@
                     "unit": "kg",
                     "value": 1
                 },
+                "itemCount": 1,
                 "isFragile": true
             },
             {
@@ -118,6 +127,7 @@
                     "unit": "kg",
                     "value": 0.5
                 },
+                "itemCount": 1,
                 "isFragile": false
             }
         ]

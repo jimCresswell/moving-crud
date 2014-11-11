@@ -7,13 +7,11 @@
   </header>
 
   <section>
-    <header>
-      <h3>Home Contents Input</h3>
-    </header>
+    <h3>Add a room</h3>
     <form role="form" ng-submit="vm.processRoom()">
       <div class="row">
         <div class="input-group">
-          <input type="text" ng-model="vm.newRoom" placeholder="Add a room" class="form-control">
+          <input type="text" ng-model="vm.newRoom" placeholder="Room description" class="form-control">
           <span class="input-group-btn">
             <input type="submit" class="btn btn-primary" value="Add">
           </span>
@@ -26,13 +24,28 @@
     <header>
       <h3>Home Contents Summary</h3>
     </header>
-    <div ui-sortable ng-model="vm.rooms">
-      <p class="input-group" ng-repeat="room in vm.rooms track by $index">
-        <input type="text" ng-model="room.roomDescription" class="form-control">
-        <span class="input-group-btn">
-          <button class="btn btn-danger" ng-click="vm.removeRoom($index)" aria-label="Remove room">X</button>
-        </span>
-      </p>
+    <button class="btn btn-danger btn--kill-all-rooms" ng-click="vm.clearAllRooms()">Clear all rooms</button>
+    <div ng-model="vm.rooms">
+      <ul class="room-list" ng-repeat="room in vm.rooms track by $index">
+        <li class= "room">
+          <input class="room--description" type="text" ng-model="room.roomDescription" class="form-control">
+          <span class="room--kill-button">
+            <button class="btn btn-danger" ng-click="vm.removeRoom($index)" aria-label="Remove room">X</button>
+          </span>
+          <ul class="item-list" ng-repeat="item in room.roomContents track by $index">
+            <li class="item">
+              <input class="item--description" ng-model="item.itemDescription">
+              <ul class="item--details-list">
+                <li><label>Count: <input ng-model="item.itemCount"></label></li>
+                <li><label>Weight: <input ng-model="item.itemWeight.value"> kg</label></li>
+                <!-- TODO: write custom directive to parse for boolean values -->
+                <li><label>Fragile? True or false <input ng-model="item.isFragile"><label></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <hr>
+      </ul>
     </div>
   </section>
 
@@ -41,13 +54,7 @@
       <h4>Controls</h4>
     </header>
     <ul>
-      <li><p>Add room</p></li>
-      <li><p>Edit room</p></li>
-      <li><p>Delete room</p></li>
-    </ul>
-    <ul>
       <li><p>Add item</p></li>
-      <li><p>Edit item</p></li>
       <li><p>Delete item</p></li>
     </ul>
   </section>

@@ -18,6 +18,7 @@ function HomeController($scope, $http, localStorageService) {
     // Public methods.
     vm.processRoom = processRoom;
     vm.removeRoom = removeRoom;
+    vm.clearAllRooms = clearAllRooms;
     vm.processItem = processItem;
     vm.removeItem = removeItem;
 
@@ -33,7 +34,6 @@ function HomeController($scope, $http, localStorageService) {
             console.error(status);
         });
     }
-
 
     // Sync local storage on model update.
     // TODO: move to a factory so $scope isn't needed in this controller.
@@ -57,12 +57,33 @@ function HomeController($scope, $http, localStorageService) {
         vm.newRoom = '';
     }
 
-    function addRoom(room) {
-        vm.rooms.unshift(room);
+    function addRoom(roomDescription) {
+        vm.rooms.unshift({
+            "roomDescription" : roomDescription,
+            "roomContents": [
+                {
+                    "itemDescription": "Item 1",
+                    "itemWeight": {
+                        "unit": "kg",
+                        "value": 1
+                    },
+                    "itemCount": 1,
+                    "isFragile": false
+                }
+            ]
+        });
     }
 
     function removeRoom(index) {
-        vm.rooms.splice(index, 1);
+        if (window.confirm('Are you sure you want to delete a room?')) {
+            vm.rooms.splice(index, 1);
+        }
+    }
+
+    function clearAllRooms() {
+        if (window.confirm('Are you sure you want to delete ALL the rooms?')) {
+            vm.rooms = [];
+        }
     }
 
     function processItem() {}

@@ -16,7 +16,6 @@ section {
 }
 
 .header-copy {
-
     width: 30em;
     max-width: 100%;
     margin-left: auto;
@@ -29,8 +28,36 @@ section {
     }
 }
 
-/* Sortable summary items */
-.summary p {
-    padding: 1em 1em 1em 2em;
-    cursor: move;
+
+/* Kill all rooms button */
+.btn--kill-all-rooms {
+    margin-bottom: 3em;
+}
+
+/* room and item lists */
+.room-list, .item-list, .item--details-list {
+    list-style: none;
+}
+
+.room--description {
+    max-width: 80%;
+    width: 20em;
+    margin-bottom: 2em;
+}
+
+.item {
+    margin-bottom: 3em;
+}
+
+.item--description {
+   margin-bottom: 1em; 
+}
+
+
+.item--details-list li {
+    margin-bottom: 1em;
+
+    input {
+        width: 5em;
+    }
 }
