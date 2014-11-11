@@ -10,9 +10,9 @@
 angular.module('moving-crud')
   .controller('HomeCtrl', HomeController);
 
-HomeController.$inject = ['$scope', '$http', 'localStorageService'];
+HomeController.$inject = ['$scope', '$http', '$window', 'localStorageService'];
 
-function HomeController($scope, $http, localStorageService) {
+function HomeController($scope, $http, $window, localStorageService) {
     var vm = this;
 
     // Public methods.
@@ -75,13 +75,13 @@ function HomeController($scope, $http, localStorageService) {
     }
 
     function removeRoom(roomIndex) {
-        if (window.confirm('Are you sure you want to delete a room?')) {
+        if ($window.confirm('Are you sure you want to delete a room?')) {
             vm.rooms.splice(roomIndex, 1);
         }
     }
 
     function clearAllRooms() {
-        if (window.confirm('Are you sure you want to delete ALL the rooms?')) {
+        if ($window.confirm('Are you sure you want to delete ALL the rooms?')) {
             vm.rooms = [];
         }
     }
@@ -100,7 +100,7 @@ function HomeController($scope, $http, localStorageService) {
 
     function removeItem(roomIndex, itemIndex) {
         var item = vm.rooms[roomIndex].roomContents[itemIndex];
-        if (window.confirm('Are you sure you want to delete the ' + item.itemDescription + '?')) {
+        if ($window.confirm('Are you sure you want to delete the ' + item.itemDescription + '?')) {
             vm.rooms[roomIndex].roomContents.splice(itemIndex, 1);
         }
     }

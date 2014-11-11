@@ -13,6 +13,9 @@ describe('Controller: HomeCtrl', function () {
     localStorageService = _localStorageService_;
     $controller('HomeCtrl as vm', {
       $scope: scope,
+      $window: {
+        confirm: function() {return true;}
+      },
       localStorageService: _localStorageService_
     });
   }));

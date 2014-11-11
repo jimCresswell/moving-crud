@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name movingCrudApp.controller:HeaderCtrl
+ * @name moving-crud.controller:HeaderCtrl
  * @description
  * # HeaderCtrl
- * Controller of the movingCrudApp
+ * Controller of the moving-crud app
  */
-angular.module('movingCrudApp')
+angular.module('moving-crud')
   .controller('HeaderCtrl', function ($scope) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
