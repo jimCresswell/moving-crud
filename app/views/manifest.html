@@ -9,12 +9,12 @@
         <section>
           <header class="room--description" type="text">
             <h3>{{room.roomDescription}}</h3>
-          <header>
+          </header>
           <ul class="item-list">
             <li class="item" ng-repeat="item in room.roomContents track by $index">
-              <section>
-                <header>
-                  <h4>{{item.itemDescription}}</h4>
+              <section class="group">
+                <header class="item--header">
+                  <h4 class="item--description">{{item.itemDescription}}</h4>
                 </header>
                 <ul class="item--details-list">
                   <li><p>Count: {{item.itemCount}}</p></li>

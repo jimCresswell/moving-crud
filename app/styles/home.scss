@@ -1,82 +1,79 @@
-header {
-    margin-bottom: 2em;
+.home {
+    header {
+        margin-bottom: 2em;
 
-    h1 {
-        margin-bottom: 1em;
+        h1 {
+            margin-bottom: 1em;
+        }
     }
-}
 
-article > header {
-    text-align: center;
-    margin-bottom: 3em;
-}
+    & > header {
+        text-align: center;
+        margin-bottom: 3em;
+    }
 
-section {
-    margin-bottom: 3em;
-}
+    section {
+        margin-bottom: 3em;
+    }
 
-.header-copy {
-    width: 30em;
-    max-width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-
-    img {
-        width: 10em;
+    .header-copy {
+        width: 30em;
         max-width: 100%;
-        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+
+        img {
+            width: 10em;
+            max-width: 100%;
+            height: auto;
+        }
     }
-}
 
 
-/* Kill all rooms button */
-.btn--kill-all-rooms {
-    margin-bottom: 3em;
-}
+    /* Kill all rooms button */
+    .btn--kill-all-rooms {
+        margin-bottom: 3em;
+    }
 
-/* room and item lists */
-.room-list, .item-list, .item--details-list {
-    list-style: none;
-}
+    /* room and item lists */
 
-.room--description {
-    max-width: 80%;
-    width: 20em;
-    font-weight: bold;
-    margin-bottom: 2em;
-}
+    .room--description {
+        max-width: 80%;
+        width: 20em;
+        font-weight: bold;
+        margin-bottom: 2em;
+    }
 
-.btn--add-item {
-    margin-left: 1em;
-}
+    .btn--add-item {
+        margin-left: 1em;
+    }
 
-.btn--kill-room {
-    margin-left: 2em;
-}
+    .btn--kill-room {
+        margin-left: 2em;
+    }
 
-.room-list > li:last-child > hr {
-    display: none;
-}
 
-.item {
-    margin-bottom: 3em;
-}
 
-.item--description {
-   margin-bottom: 1em; 
-}
+    .item {
+        margin-bottom: 3em;
+    }
 
-.btn--kill-item {
-    margin-left: 1em;
-    border: none;
-    font-weight: bold;
-    background-color: darkorange;
-}
+    .item--description {
+       margin-bottom: 1em; 
+    }
 
-.item--details-list li {
-    margin-bottom: 1em;
+    .btn--kill-item {
+        margin-left: 1em;
+        border: none;
+        font-weight: bold;
+        background-color: darkorange;
+    }
 
-    input {
-        width: 5em;
+    .item--details-list li {
+        margin-bottom: 1em;
+
+        input {
+            width: 5em;
+        }
     }
 }
