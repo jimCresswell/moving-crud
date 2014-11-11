@@ -10,16 +10,27 @@
 angular.module('moving-crud')
   .controller('HomeCtrl', HomeController);
 
-HomeController.$inject = ['$scope', 'localStorageService'];
+HomeController.$inject = ['$scope', '$http', 'localStorageService'];
 
-function HomeController($scope, localStorageService) {
+function HomeController($scope, $http, localStorageService) {
     var vm = this;
 
-    // Load items from local storage or load the example data.
-    vm.items = localStorageService.get('items') || [];
-
+    // Public methods.
     vm.processItem = processItem;
     vm.removeItem = removeItem;
+
+    // Load items from local storage or load the example data.
+    vm.items = localStorageService.get('items');
+    if (!vm.items || vm.items.length === 0) {
+        $http.get('data/example-manifest.json')
+        .success(function(data, status, headers, config) {
+            vm.items = data;
+        })
+        .error(function(data, status, headers, config) {
+            console.error(status);
+        });
+    }
+
 
     // Sync local storage on model update.
     // TODO: move to a factory so $scope isn't needed in this controller.
