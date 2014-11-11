@@ -26,15 +26,21 @@
     </header>
     <button class="btn btn-danger btn--kill-all-rooms" ng-click="vm.clearAllRooms()">Clear all rooms</button>
     <div ng-model="vm.rooms">
-      <ul class="room-list" ng-repeat="room in vm.rooms track by $index">
-        <li class= "room">
+      <ul class="room-list">
+        <li class= "room" ng-repeat="room in vm.rooms track by $index">
           <input class="room--description" type="text" ng-model="room.roomDescription" class="form-control">
-          <span class="room--kill-button">
-            <button class="btn btn-danger" ng-click="vm.removeRoom($index)" aria-label="Remove room">X</button>
+          <span>
+            <button class="btn btn-primary btn--add-item" ng-click="vm.addItem($index)">Add item</button>
           </span>
-          <ul class="item-list" ng-repeat="item in room.roomContents track by $index">
-            <li class="item">
+          <span>
+            <button class="btn btn-danger btn--kill-room" ng-click="vm.removeRoom($index)" aria-label="Remove room">X</button>
+          </span>
+          <ul class="item-list">
+            <li class="item" ng-repeat="item in room.roomContents track by $index">
               <input class="item--description" ng-model="item.itemDescription">
+              <span>
+                <button class="btn btn-danger btn--kill-item" ng-click="vm.removeItem($parent.$index, $index)" aria-label="Remove item">X</button>
+              </span>
               <ul class="item--details-list">
                 <li><label>Count: <input ng-model="item.itemCount"></label></li>
                 <li><label>Weight: <input ng-model="item.itemWeight.value"> kg</label></li>
@@ -43,21 +49,9 @@
               </ul>
             </li>
           </ul>
+          <hr>
         </li>
-        <hr>
       </ul>
     </div>
   </section>
-
-  <section>
-    <header>
-      <h4>Controls</h4>
-    </header>
-    <ul>
-      <li><p>Add item</p></li>
-      <li><p>Delete item</p></li>
-    </ul>
-  </section>
 </article>
-
-<!--     <p><a class="btn btn-lg btn-success" ng-href="#">A button with a glyph!<span class="glyphicon glyphicon-ok"></span></a></p> -->

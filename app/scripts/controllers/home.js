@@ -19,7 +19,7 @@ function HomeController($scope, $http, localStorageService) {
     vm.processRoom = processRoom;
     vm.removeRoom = removeRoom;
     vm.clearAllRooms = clearAllRooms;
-    vm.processItem = processItem;
+    vm.addItem = addItem;
     vm.removeItem = removeItem;
 
     // Load rooms from local storage or load the example data.
@@ -74,9 +74,9 @@ function HomeController($scope, $http, localStorageService) {
         });
     }
 
-    function removeRoom(index) {
+    function removeRoom(roomIndex) {
         if (window.confirm('Are you sure you want to delete a room?')) {
-            vm.rooms.splice(index, 1);
+            vm.rooms.splice(roomIndex, 1);
         }
     }
 
@@ -86,6 +86,22 @@ function HomeController($scope, $http, localStorageService) {
         }
     }
 
-    function processItem() {}
-    function removeItem() {}
+    function addItem(roomIndex) {
+        vm.rooms[roomIndex].roomContents.unshift({
+            "itemDescription": "Item 1",
+            "itemWeight": {
+                "unit": "kg",
+                "value": 1
+            },
+            "itemCount": 1,
+            "isFragile": false
+        });
+    }
+
+    function removeItem(roomIndex, itemIndex) {
+        var item = vm.rooms[roomIndex].roomContents[itemIndex];
+        if (window.confirm('Are you sure you want to delete the ' + item.itemDescription + '?')) {
+            vm.rooms[roomIndex].roomContents.splice(itemIndex, 1);
+        }
+    }
 }

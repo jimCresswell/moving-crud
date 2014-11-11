@@ -42,7 +42,16 @@ section {
 .room--description {
     max-width: 80%;
     width: 20em;
+    font-weight: bold;
     margin-bottom: 2em;
+}
+
+.btn--kill-room {
+    margin-left: 2em;
+}
+
+.room-list > li:last-child > hr {
+    display: none;
 }
 
 .item {
@@ -53,6 +62,11 @@ section {
    margin-bottom: 1em; 
 }
 
+.btn--kill-item {
+    border: none;
+    font-weight: bold;
+    background-color: darkorange;
+}
 
 .item--details-list li {
     margin-bottom: 1em;
