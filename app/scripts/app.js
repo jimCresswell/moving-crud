@@ -19,11 +19,6 @@ angular
     'ui.sortable',
     'LocalStorageModule'
   ])
-  .filter('yesno', function() {
-    return function(boolean) {
-      return boolean ? 'yes' : 'no';
-    }
-  })
   .config(['localStorageServiceProvider', function(localStorageServiceProvider){
     localStorageServiceProvider.setPrefix('ls');
   }])
