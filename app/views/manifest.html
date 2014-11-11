@@ -10,20 +10,23 @@
           <header class="room--description" type="text">
             <h3>{{room.roomDescription}}</h3>
           </header>
-          <ul class="item-list">
-            <li class="item" ng-repeat="item in room.roomContents track by $index">
-              <section class="group">
-                <header class="item--header">
-                  <h4 class="item--description">{{item.itemDescription}}</h4>
-                </header>
-                <ul class="item--details-list">
-                  <li><p>Count: {{item.itemCount}}</p></li>
-                  <li><p>Weight: {{item.itemWeight.value}} kg</p></li>
-                  <li><p>Fragile: {{item.isFragile}}</p></li>
-                </ul>
-              </section>
-            </li>
-          </ul>
+
+          <table>
+            <thead>
+              <tr>
+                <td>Description</td>
+                <td>Count</td>
+                <td>Weight</td>
+                <td>Fragile</td>
+              </tr>
+              <tr ng-repeat="item in room.roomContents">
+                <td class="item--description">{{item.itemDescription}}</td>
+                <td>{{item.itemCount}}</td>
+                <td>{{item.itemWeight.value}} kg</td>
+                <td>{{item.isFragile}}</td>
+              </tr>
+            </thead>
+          </table>
         </section>
         <hr>
       </li>
