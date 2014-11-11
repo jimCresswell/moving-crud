@@ -13,11 +13,7 @@ angular.module('moving-crud')
 function HomeController() {
     var vm = this;
 
-    vm.items = [
-      'Item 1',
-      'Item 2',
-      'Item 4'
-    ];
+    vm.items = [];
 
     vm.processItem = processItem;
     vm.removeItem = removeItem;
