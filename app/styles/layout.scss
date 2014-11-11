@@ -70,3 +70,11 @@ body {
     margin-bottom: 30px;
   }
 }
+
+
+/* Semantic clearfix. */
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
