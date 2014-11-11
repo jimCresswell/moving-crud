@@ -22,16 +22,18 @@
     </form>
   </section>
 
-  <section>
+  <section class="summary">
     <header>
       <h4>Home Contents Summary</h4>
     </header>
-    <p class="input-group" ng-repeat="item in vm.items track by $index">
-      <input type="text" ng-model="item" class="form-control">
-      <span class="input-group-btn">
-        <button class="btn btn-danger" ng-click="vm.removeItem($index)" aria-label="Remove item">X</button>
-      </span>
-    </p>
+    <div ui-sortable ng-model="vm.items">
+      <p class="input-group" ng-repeat="item in vm.items track by $index">
+        <input type="text" ng-model="item" class="form-control">
+        <span class="input-group-btn">
+          <button class="btn btn-danger" ng-click="vm.removeItem($index)" aria-label="Remove item">X</button>
+        </span>
+      </p>
+    </div>
   </section>
 
   <section>

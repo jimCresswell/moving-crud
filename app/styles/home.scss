@@ -2,3 +2,9 @@ article > header > img {
     width: 10em;
     height: auto;
 }
+
+/* Sortable summary items */
+.summary p {
+    padding: 1em 1em 1em 2em;
+    cursor: move;
+}

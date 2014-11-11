@@ -38,7 +38,7 @@ function HomeController() {
 
         addItem(vm.newItem);
         vm.newItem = '';
-    };
+    }
 
     function addItem(item) {
         vm.items.push(item);
