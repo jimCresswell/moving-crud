@@ -1,0 +1,125 @@
+[
+    {
+        "room-description" : "Reception room",
+        "room-contents": [
+            {
+                "item-description": "Sofa",
+                "item-weight": {
+                    "unit": "kg",
+                    "value": 40
+                },
+                "is-fragile": false
+            },
+            {
+                "item-description": "Television",
+                "item-weight": {
+                    "unit": "kg",
+                    "value": 5
+                },
+                "is-fragile": true
+            },
+            {
+                "item-description": "Rug",
+                "item-weight": {
+                    "unit": "kg",
+                    "value": 0.5
+                },
+                "is-fragile": false
+            }
+        ]
+    },
+    {
+        "room-description" : "Hall",
+        "room-contents": [
+            {
+                "item-description": "Hatstand",
+                "item-weight": {
+                    "unit": "kg",
+                    "value": 2
+                },
+                "is-fragile": false
+            },
+            {
+                "item-description": "Shoe rack",
+                "item-weight": {
+                    "unit": "kg",
+                    "value": 1
+                },
+                "is-fragile": false
+            }
+        ]
+    },
+    {
+        "room-description" : "Kitchen",
+        "room-contents": [
+            {
+                "item-description": "Large plates",
+                "item-weight": {
+                    "unit": "kg",
+                    "value": 0.2
+                },
+                "item-count": 8,
+                "is-fragile": true
+            },
+            {
+                "item-description": "Wine glasses",
+                "item-weight": {
+                    "unit": "kg",
+                    "value": 0.05
+                },
+                "item-count": 4,
+                "is-fragile": true
+            },
+            {
+                "item-description": "Kitchen table",
+                "item-weight": {
+                    "unit": "kg",
+                    "value": 50
+                },
+                "is-fragile": false
+            }
+        ]
+    },
+    {
+        "room-description" : "Bedroom",
+        "room-contents": [
+            {
+                "item-description": "Bed frame",
+                "item-weight": {
+                    "unit": "kg",
+                    "value": 60
+                },
+                "is-fragile": false
+            },
+            {
+                "item-description": "Rug",
+                "item-weight": {
+                    "unit": "kg",
+                    "value": 0.5
+                },
+                "is-fragile": false
+            }
+        ]
+    },
+    {
+        "room-description" : "Bathroom",
+        "room-contents": [
+            {
+                "item-description": "Mirror",
+                "item-weight": {
+                    "unit": "kg",
+                    "value": 1
+                },
+                "is-fragile": true
+            },
+            {
+                "item-description": "Basket",
+                "item-weight": {
+                    "unit": "kg",
+                    "value": 0.5
+                },
+                "is-fragile": false
+            }
+        ]
+    }
+]
