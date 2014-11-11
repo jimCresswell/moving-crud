@@ -20,6 +20,7 @@ function HomeController($scope, $http, localStorageService) {
     vm.removeItem = removeItem;
 
     // Load items from local storage or load the example data.
+    // TODO: create a data service to remove this logic.
     vm.items = localStorageService.get('items');
     if (!vm.items || vm.items.length === 0) {
         $http.get('data/example-manifest.json')
