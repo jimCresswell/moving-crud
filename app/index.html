@@ -22,9 +22,9 @@
     <!-- Add your site or application content here -->
     <div class="container">
       <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li class="active"><a ng-href="#">Home</a></li>
-          <li><a ng-href="#/manifest">Manifest</a></li>
+        <ul class="nav nav-pills pull-right" ng-controller="HeaderCtrl as vm">
+          <li ng-class="{active: vm.getIsActive('/')}"><a ng-href="#">Home</a></li>
+          <li ng-class="{active: vm.getIsActive('/manifest')}"><a ng-href="#/manifest">Manifest</a></li>
         </ul>
         <h3 class="text-muted">Moving CRUD</h3>
       </div>

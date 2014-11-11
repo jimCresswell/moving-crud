@@ -8,10 +8,15 @@
  * Controller of the moving-crud app
  */
 angular.module('moving-crud')
-  .controller('HeaderCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+  .controller('HeaderCtrl', HeaderController);
+
+HeaderController.$inject = ['$location'];
+
+function HeaderController($location) {
+    var vm = this;
+
+    // Is viewLocation the current location?
+    vm.getIsActive = function(viewLocation) {
+        return viewLocation === $location.path();
+    }
+}
