@@ -10,13 +10,27 @@
 angular.module('moving-crud')
   .controller('HomeCtrl', HomeController);
 
-function HomeController() {
+HomeController.$inject = ['$scope', 'localStorageService'];
+
+function HomeController($scope, localStorageService) {
     var vm = this;
 
-    vm.items = [];
+    // Load items from local storage or load the example data.
+    vm.items = localStorageService.get('items') || [];
 
     vm.processItem = processItem;
     vm.removeItem = removeItem;
+
+    // Sync local storage on model update.
+    // TODO: move to a factory so $scope isn't needed in this controller.
+    $scope.$watch('vm.items', function () {
+      localStorageService.set('items', vm.items);
+    }, true);
+
+
+    /*
+     * Function definitions
+     */
 
     function processItem() {
 

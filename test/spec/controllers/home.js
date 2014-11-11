@@ -2,16 +2,17 @@
 
 describe('Controller: HomeCtrl', function () {
 
+  var scope;
+
   // load the controller's module
   beforeEach(module('moving-crud'));
 
-  var scope;
-
   // Initialize the controller and a mock scope
-  beforeEach(inject(function ($controller, $rootScope) {
+  beforeEach(inject(function ($controller, $rootScope, _localStorageService_) {
     scope = $rootScope.$new();
     $controller('HomeCtrl as vm', {
-      $scope: scope
+      $scope: scope,
+      localStorageService: _localStorageService_
     });
   }));
 
