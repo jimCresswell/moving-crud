@@ -27,7 +27,7 @@
     <button class="btn btn-danger btn--kill-all-rooms" ng-click="vm.clearAllRooms()">Clear all rooms</button>
     <div ng-model="vm.rooms">
       <ul class="room-list">
-        <li class= "room" ng-repeat="room in vm.rooms track by $index">
+        <li class="room" ng-repeat="room in vm.rooms track by $index">
           <input class="room--description" type="text" ng-model="room.roomDescription" class="form-control">
           <span>
             <button class="btn btn-primary btn--add-item" ng-click="vm.addItem($index)">Add item</button>

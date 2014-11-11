@@ -1,23 +1,33 @@
 <article class="manifest container">
   <header>
-    <h1>Where are the things?</h1>
-    <p>Read items!</p>
+    <h1>Manifest</h1>
   </header>
 
-  <ul>
-    <li>
-      <h5>Room1</h5>
-      <ul>
-        <li><p>Item</p></li>
-        <li><p>Item</p></li>
-      </ul>
-    </li>
-    <li>
-      <h5>Room2</h5>
-      <ul>
-        <li><p>Item</p></li>
-        <li><p>Item</p></li>
-      </ul>
-    </li>
-  </ul>
+  <div ng-model="vm.rooms">
+    <ul class="room-list">
+      <li class="room" ng-repeat="room in vm.rooms track by $index">
+        <section>
+          <header class="room--description" type="text">
+            <h3>{{room.roomDescription}}</h3>
+          <header>
+          <ul class="item-list">
+            <li class="item" ng-repeat="item in room.roomContents track by $index">
+              <section>
+                <header>
+                  <h4>{{item.itemDescription}}</h4>
+                </header>
+                <ul class="item--details-list">
+                  <li><p>Count: {{item.itemCount}}</p></li>
+                  <li><p>Weight: {{item.itemWeight.value}} kg</p></li>
+                  <li><p>Fragile: {{item.isFragile}}</p></li>
+                </ul>
+              </section>
+            </li>
+          </ul>
+        </section>
+        <hr>
+      </li>
+    </ul>
+  </div>
+
 </article>
