@@ -1,0 +1,54 @@
+<article class="home container">
+  <header>
+    <h1>What Have You Got?</h1>
+    <h4>It's hard to move a house. We'll help you move your home.</h4>
+    <img src="images/moving-house.jpg" alt="It's hard to move a house. We'll help you move your home.">
+  </header>
+
+
+  <section>
+    <header>
+      <h4>Home Contents Input</h4>
+    </header>
+    <form role="form" ng-submit="vm.processItem()">
+      <div class="row">
+        <div class="input-group">
+          <input type="text" ng-model="vm.newItem" placeholder="What have you got?" class="form-control">
+          <span class="input-group-btn">
+            <input type="submit" class="btn btn-primary" value="Add">
+          </span>
+        </div>
+      </div>
+    </form>
+  </section>
+
+  <section>
+    <header>
+      <h4>Home Contents Summary</h4>
+    </header>
+    <p class="input-group" ng-repeat="item in vm.items track by $index">
+      <input type="text" ng-model="item" class="form-control">
+      <span class="input-group-btn">
+        <button class="btn btn-danger" ng-click="vm.removeItem($index)" aria-label="Remove item">X</button>
+      </span>
+    </p>
+  </section>
+
+  <section>
+    <header>
+      <h4>Controls</h4>
+    </header>
+    <ul>
+      <li><p>Add room</p></li>
+      <li><p>Edit room</p></li>
+      <li><p>Delete room</p></li>
+    </ul>
+    <ul>
+      <li><p>Add item</p></li>
+      <li><p>Edit item</p></li>
+      <li><p>Delete item</p></li>
+    </ul>
+  </section>
+</article>
+
+<!--     <p><a class="btn btn-lg btn-success" ng-href="#">A button with a glyph!<span class="glyphicon glyphicon-ok"></span></a></p> -->
