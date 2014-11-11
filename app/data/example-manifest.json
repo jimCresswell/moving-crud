@@ -1,124 +1,124 @@
 [
     {
-        "room-description" : "Reception room",
-        "room-contents": [
+        "roomDescription" : "Reception room",
+        "roomContents": [
             {
-                "item-description": "Sofa",
-                "item-weight": {
+                "itemDescription": "Sofa",
+                "itemWeight": {
                     "unit": "kg",
                     "value": 40
                 },
-                "is-fragile": false
+                "isFragile": false
             },
             {
-                "item-description": "Television",
-                "item-weight": {
+                "itemDescription": "Television",
+                "itemWeight": {
                     "unit": "kg",
                     "value": 5
                 },
-                "is-fragile": true
+                "isFragile": true
             },
             {
-                "item-description": "Rug",
-                "item-weight": {
+                "itemDescription": "Rug",
+                "itemWeight": {
                     "unit": "kg",
                     "value": 0.5
                 },
-                "is-fragile": false
+                "isFragile": false
             }
         ]
     },
     {
-        "room-description" : "Hall",
-        "room-contents": [
+        "roomDescription" : "Hall",
+        "roomContents": [
             {
-                "item-description": "Hatstand",
-                "item-weight": {
+                "itemDescription": "Hatstand",
+                "itemWeight": {
                     "unit": "kg",
                     "value": 2
                 },
-                "is-fragile": false
+                "isFragile": false
             },
             {
-                "item-description": "Shoe rack",
-                "item-weight": {
+                "itemDescription": "Shoe rack",
+                "itemWeight": {
                     "unit": "kg",
                     "value": 1
                 },
-                "is-fragile": false
+                "isFragile": false
             }
         ]
     },
     {
-        "room-description" : "Kitchen",
-        "room-contents": [
+        "roomDescription" : "Kitchen",
+        "roomContents": [
             {
-                "item-description": "Large plates",
-                "item-weight": {
+                "itemDescription": "Large plates",
+                "itemWeight": {
                     "unit": "kg",
                     "value": 0.2
                 },
-                "item-count": 8,
-                "is-fragile": true
+                "itemCount": 8,
+                "isFragile": true
             },
             {
-                "item-description": "Wine glasses",
-                "item-weight": {
+                "itemDescription": "Wine glasses",
+                "itemWeight": {
                     "unit": "kg",
                     "value": 0.05
                 },
-                "item-count": 4,
-                "is-fragile": true
+                "itemCount": 4,
+                "isFragile": true
             },
             {
-                "item-description": "Kitchen table",
-                "item-weight": {
+                "itemDescription": "Kitchen table",
+                "itemWeight": {
                     "unit": "kg",
                     "value": 50
                 },
-                "is-fragile": false
+                "isFragile": false
             }
         ]
     },
     {
-        "room-description" : "Bedroom",
-        "room-contents": [
+        "roomDescription" : "Bedroom",
+        "roomContents": [
             {
-                "item-description": "Bed frame",
-                "item-weight": {
+                "itemDescription": "Bed frame",
+                "itemWeight": {
                     "unit": "kg",
                     "value": 60
                 },
-                "is-fragile": false
+                "isFragile": false
             },
             {
-                "item-description": "Rug",
-                "item-weight": {
+                "itemDescription": "Rug",
+                "itemWeight": {
                     "unit": "kg",
                     "value": 0.5
                 },
-                "is-fragile": false
+                "isFragile": false
             }
         ]
     },
     {
-        "room-description" : "Bathroom",
-        "room-contents": [
+        "roomDescription" : "Bathroom",
+        "roomContents": [
             {
-                "item-description": "Mirror",
-                "item-weight": {
+                "itemDescription": "Mirror",
+                "itemWeight": {
                     "unit": "kg",
                     "value": 1
                 },
-                "is-fragile": true
+                "isFragile": true
             },
             {
-                "item-description": "Basket",
-                "item-weight": {
+                "itemDescription": "Basket",
+                "itemWeight": {
                     "unit": "kg",
                     "value": 0.5
                 },
-                "is-fragile": false
+                "isFragile": false
             }
         ]
     }

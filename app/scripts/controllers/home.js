@@ -16,18 +16,20 @@ function HomeController($scope, $http, localStorageService) {
     var vm = this;
 
     // Public methods.
+    vm.processRoom = processRoom;
+    vm.removeRoom = removeRoom;
     vm.processItem = processItem;
     vm.removeItem = removeItem;
 
-    // Load items from local storage or load the example data.
+    // Load rooms from local storage or load the example data.
     // TODO: create a data service to remove this logic.
-    vm.items = localStorageService.get('items');
-    if (!vm.items || vm.items.length === 0) {
+    vm.rooms = localStorageService.get('rooms') || [];
+    if (vm.rooms.length === 0) {
         $http.get('data/example-manifest.json')
-        .success(function(data, status, headers, config) {
-            vm.items = data;
+        .success(function(data) {
+            vm.rooms = data;
         })
-        .error(function(data, status, headers, config) {
+        .error(function(data, status) {
             console.error(status);
         });
     }
@@ -35,8 +37,8 @@ function HomeController($scope, $http, localStorageService) {
 
     // Sync local storage on model update.
     // TODO: move to a factory so $scope isn't needed in this controller.
-    $scope.$watch('vm.items', function () {
-      localStorageService.set('items', vm.items);
+    $scope.$watch('vm.rooms', function () {
+      localStorageService.set('rooms', vm.rooms);
     }, true);
 
 
@@ -44,29 +46,25 @@ function HomeController($scope, $http, localStorageService) {
      * Function definitions
      */
 
-    function processItem() {
+    function processRoom() {
 
         // Reject falsy item descriptions including undefined and empty string.
-        if (!vm.newItem) {
+        if (!vm.newRoom) {
             return;
         }
 
-        // Verify intentional duplicate items
-        if (vm.items.indexOf(vm.newItem) !== -1) {
-            if (!window.confirm('Are you sure you want to add the same item again?')) {
-                return;
-            }
-        }
-
-        addItem(vm.newItem);
-        vm.newItem = '';
+        addRoom(vm.newRoom);
+        vm.newRoom = '';
     }
 
-    function addItem(item) {
-        vm.items.push(item);
+    function addRoom(room) {
+        vm.rooms.unshift(room);
     }
 
-    function removeItem(index) {
-        vm.items.splice(index, 1);
+    function removeRoom(index) {
+        vm.rooms.splice(index, 1);
     }
+
+    function processItem() {}
+    function removeItem() {}
 }

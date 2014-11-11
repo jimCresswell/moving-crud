@@ -10,10 +10,10 @@
     <header>
       <h3>Home Contents Input</h3>
     </header>
-    <form role="form" ng-submit="vm.processItem()">
+    <form role="form" ng-submit="vm.processRoom()">
       <div class="row">
         <div class="input-group">
-          <input type="text" ng-model="vm.newItem" placeholder="What have you got?" class="form-control">
+          <input type="text" ng-model="vm.newRoom" placeholder="Add a room" class="form-control">
           <span class="input-group-btn">
             <input type="submit" class="btn btn-primary" value="Add">
           </span>
@@ -26,11 +26,11 @@
     <header>
       <h3>Home Contents Summary</h3>
     </header>
-    <div ui-sortable ng-model="vm.items">
-      <p class="input-group" ng-repeat="item in vm.items track by $index">
-        <input type="text" ng-model="item" class="form-control">
+    <div ui-sortable ng-model="vm.rooms">
+      <p class="input-group" ng-repeat="room in vm.rooms track by $index">
+        <input type="text" ng-model="room.roomDescription" class="form-control">
         <span class="input-group-btn">
-          <button class="btn btn-danger" ng-click="vm.removeItem($index)" aria-label="Remove item">X</button>
+          <button class="btn btn-danger" ng-click="vm.removeRoom($index)" aria-label="Remove room">X</button>
         </span>
       </p>
     </div>
