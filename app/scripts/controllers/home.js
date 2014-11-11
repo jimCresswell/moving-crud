@@ -59,16 +59,16 @@ function HomeController($scope, $http, localStorageService) {
 
     function addRoom(roomDescription) {
         vm.rooms.unshift({
-            "roomDescription" : roomDescription,
-            "roomContents": [
+            'roomDescription' : roomDescription,
+            'roomContents': [
                 {
-                    "itemDescription": "Item 1",
-                    "itemWeight": {
-                        "unit": "kg",
-                        "value": 1
+                    'itemDescription': 'Item 1',
+                    'itemWeight': {
+                        'unit': 'kg',
+                        'value': 1
                     },
-                    "itemCount": 1,
-                    "isFragile": false
+                    'itemCount': 1,
+                    'isFragile': false
                 }
             ]
         });
@@ -88,13 +88,13 @@ function HomeController($scope, $http, localStorageService) {
 
     function addItem(roomIndex) {
         vm.rooms[roomIndex].roomContents.unshift({
-            "itemDescription": "Item 1",
-            "itemWeight": {
-                "unit": "kg",
-                "value": 1
+            'itemDescription': 'Item 1',
+            'itemWeight': {
+                'unit': 'kg',
+                'value': 1
             },
-            "itemCount": 1,
-            "isFragile": false
+            'itemCount': 1,
+            'isFragile': false
         });
     }
 
