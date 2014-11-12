@@ -3,9 +3,12 @@
     <h1>Manifest</h1>
   </header>
 
-  <div ng-model="vm.rooms">
+  <section ng-model="vm.rooms">
+    <header>
+      <h2>Heaviest items by room</h2>
+    </header>
     <ul class="room-list">
-      <li class="room" ng-repeat="room in vm.rooms track by $index">
+      <li class="room" ng-repeat="room in vm.rooms">
         <section>
           <header class="room--description" type="text">
             <h3>{{room.roomDescription}}</h3>
@@ -19,10 +22,10 @@
                 <td>Total weight</td>
                 <td>Fragile</td>
               </tr>
-              <tr ng-repeat="item in room.roomContents">
+              <tr ng-repeat="item in room.roomContents | limitTo:2 ">
                 <td class="item--description">{{item.itemDescription}}</td>
                 <td>{{item.itemCount}}</td>
-                <td>{{item.itemWeight.value * item.itemCount | number : 1}} kg</td>
+                <td>{{item.itemWeight.value * item.itemCount | number:1}} kg</td>
                 <td>{{item.isFragile}}</td>
               </tr>
             </thead>
@@ -30,6 +33,6 @@
         </section>
       </li>
     </ul>
-  </div>
+  </section>
 
 </article>
