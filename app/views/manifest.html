@@ -13,7 +13,6 @@
           <header class="room--description" type="text">
             <h3>{{room.roomDescription}}</h3>
           </header>
-
           <table class="table">
             <thead>
               <tr>
@@ -22,17 +21,64 @@
                 <td>Total weight</td>
                 <td>Fragile</td>
               </tr>
-              <tr ng-repeat="item in room.roomContents | limitTo:2 ">
-                <td class="item--description">{{item.itemDescription}}</td>
-                <td>{{item.itemCount}}</td>
-                <td>{{item.itemWeight.value * item.itemCount | number:1}} kg</td>
-                <td>{{item.isFragile}}</td>
-              </tr>
             </thead>
+            <tr ng-repeat="item in room.roomContents | limitTo:2 ">
+              <td class="item--description">{{item.itemDescription}}</td>
+              <td>{{item.itemCount}}</td>
+              <td>{{item.itemWeight.value * item.itemCount | number:1}} kg</td>
+              <td>{{item.isFragile}}</td>
+            </tr>
           </table>
         </section>
       </li>
     </ul>
   </section>
 
+  <section ng-model="vm.rooms">
+    <header>
+      <h2>Fragile items</h2>
+    </header>
+    <table class="table">
+      <thead>
+        <tr>
+          <td>Description</td>
+          <td>Room</td>
+          <td>Count</td>
+          <td>Total weight</td>
+        </tr>
+      </thead>
+      <tbody ng-repeat="room in vm.rooms">
+        <tr ng-repeat="item in room.roomContents | filter: {isFragile: true}">
+          <td class="item--description">{{item.itemDescription}}</td>
+          <td>{{$parent.room.roomDescription}}</td>
+          <td>{{item.itemCount}}</td>
+          <td>{{item.itemWeight.value * item.itemCount | number:1}} kg</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section ng-model="vm.rooms">
+    <header>
+      <h2>Non-Fragile items</h2>
+    </header>
+    <table class="table">
+      <thead>
+        <tr>
+          <td>Description</td>
+          <td>Room</td>
+          <td>Count</td>
+          <td>Total weight</td>
+        </tr>
+      </thead>
+      <tbody ng-repeat="room in vm.rooms">
+        <tr ng-repeat="item in room.roomContents | filter: {isFragile: '!'+true}">
+          <td class="item--description">{{item.itemDescription}}</td>
+          <td>{{$parent.room.roomDescription}}</td>
+          <td>{{item.itemCount}}</td>
+          <td>{{item.itemWeight.value * item.itemCount | number:1}} kg</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
 </article>
