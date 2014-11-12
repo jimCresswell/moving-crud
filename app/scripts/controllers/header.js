@@ -18,5 +18,5 @@ function HeaderController($location) {
     // Is viewLocation the current location?
     vm.getIsActive = function(viewLocation) {
         return viewLocation === $location.path();
-    }
+    };
 }
