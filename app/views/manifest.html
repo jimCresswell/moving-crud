@@ -3,7 +3,11 @@
     <h1>Manifest</h1>
   </header>
 
-  <section ng-model="vm.rooms">
+  <section ng-hide="vm.rooms.length">
+    <p>Go add some items on the <a ng-href="#">home page</a>.</p>
+  </section>
+
+  <section ng-show="vm.rooms.length" ng-model="vm.rooms">
     <header>
       <h2>Heaviest items by room</h2>
     </header>
@@ -34,7 +38,7 @@
     </ul>
   </section>
 
-  <section ng-model="vm.rooms">
+  <section ng-show="vm.rooms.length" ng-model="vm.rooms">
     <header>
       <h2>Fragile items</h2>
     </header>
@@ -58,7 +62,7 @@
     </table>
   </section>
 
-  <section ng-model="vm.rooms">
+  <section ng-show="vm.rooms.length" ng-model="vm.rooms">
     <header>
       <h2>Non-Fragile items</h2>
     </header>
