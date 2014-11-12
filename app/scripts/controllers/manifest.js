@@ -18,7 +18,6 @@ function ManifestController(localStorageService) {
     vm.rooms = localStorageService.get('rooms') || [];
 
     // Sort by heaviest within room
-    // TODO: use the orderBy filer in the template.
     vm.rooms.forEach(function(room) {
         var items = room.roomContents;
         items.sort(function(item1, item2) {
